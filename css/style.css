@@ -259,8 +259,10 @@ header{
     font-weight: 600;
     cursor: pointer;
     height: 36px;
+    transition: all 0.2s ease-out;
 
 }
+
 
 #cart-toggle:checked + .cart{
 

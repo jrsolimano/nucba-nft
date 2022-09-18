@@ -1,0 +1,86 @@
+html{
+
+    scroll-behavior: smooth;
+    scroll-padding-top: 65px;
+}
+
+/* BLUR DIV */
+
+.overlay{
+
+    position: absolute;
+    top: 65px;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    z-index: 1;
+
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    display: none;
+   
+}
+
+#cart-toggle:checked ~ .overlay{
+
+    display: block;
+}
+
+#menu-toggle:checked ~ .overlay{
+
+    display: block;
+}
+
+/* SUBRADAYO A LOS LINKS DEL NAVBAR */
+
+.navbar-list li{
+
+    position: relative;
+    padding: 0;
+}
+
+.navbar-list li a::after{
+
+    content: ""; /* con la pseudoclase ::after siempre se debe agregar la propiedad content: ""; */
+    height: 2px;
+    width: 100%;
+    background-color: var(--text-white);
+    position: absolute;
+    bottom: 0%;
+    left: 0;
+    transform: scaleX(0); /* con esta propiedad no se muestra el elemento */
+    transform-origin: bottom right;
+    transition: transform 0.15s ease;
+}
+
+.navbar-list li a:hover::after{
+
+    transform: bottom left;
+    transform: scaleX(1); /* con esta propiedad se muestra */
+}
+
+
+/* transision .cart-icon */
+
+.cart-icon:hover{
+
+    color: var(--electrict);
+    border-color: var(--electrict);
+    transition: all 0.2s ease-in;
+}
+
+/* transition quantity-handler */
+
+.quantity-handler{
+
+    transition: all 0.2s ease-in;
+}
+
+.quantity-handler:hover{
+
+    cursor: pointer;
+    background-color: var(--electrict);
+    transition: all 0.2s ease-in;
+}
